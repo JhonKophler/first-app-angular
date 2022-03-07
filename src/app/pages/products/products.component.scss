@@ -1,19 +1,8 @@
-.products{
+section.products{
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-
-}
-
-
-.card{
-    margin: 10px;
-    width: 200px;
-    height: 80%;
-}
-
-button{
-    width: 100%;
+    
 }

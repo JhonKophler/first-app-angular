@@ -9,7 +9,11 @@
     </mat-card-content>
 
     <mat-card-actions>
-       <button mat-flat-button color="primary"><mat-icon class="material-icons">shopping_cart</mat-icon>Buy {{ product.price | currency }}</button>
+       <button mat-flat-button color="primary" (click) = 'onClick()'>
+           <mat-icon class="material-icons">
+               shopping_cart
+            </mat-icon> Buy {{ product.price | currency }}
+        </button>
     </mat-card-actions>
 
 </mat-card>

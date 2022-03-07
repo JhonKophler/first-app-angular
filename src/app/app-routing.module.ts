@@ -3,11 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
 
-  { path: 'products', 
-  loadChildren: () => import('./pages/products/products.module').then(m => m.ProductsModule) },
-
-  { path: 'product', loadChildren: () => import('./pages/products/product/product.module').then(m => m.ProductModule) },
-  {path:'**',redirectTo: '',pathMatch:'full'},//ruta 404
+  { path: 'products', loadChildren: () => import('./pages/products/products.module').then(m => m.ProductsModule) },
+  { path: 'product', loadChildren: () => import('./pages/products/product/product.component').then(m => m.ProductComponent) },
+  { path: 'checkout', loadChildren: () => import('./pages/checkout/checkout.module').then(m => m.CheckoutModule) },
+  { path:'',redirectTo: '/products',pathMatch:'full'},//ruta 404
+  { path:'**',redirectTo: '',pathMatch:'full'},//ruta 404
 
 ];
 
