@@ -33,28 +33,34 @@ export class ShoppingCartService {
         this.calcTotal();
     }
 
+    resetCart():void{
+        this.cartSubject.next([]);
+        this.totalSubject.next(0);
+        this.quantitySubject.next(0);
+        this.products = [];
+    }
 
     private addToCart(product: Product):void{
 
         const isProductInCart = this.products.find( ({id}) => id === product.id);
 
         if (isProductInCart) {
-            isProductInCart.cantidad += 1;
+            isProductInCart.quantity += 1;
         }else{
-            this.products.push( { ...product , cantidad:1 } );
+            this.products.push( { ...product , quantity:1 } );
         }
 
         this.cartSubject.next(this.products);
     }
 
     private quantityProducts():void{
-        const quantity = this.products.reduce((acc,prod) => acc += prod.cantidad,0 );
+        const quantity = this.products.reduce((acc,prod) => acc += prod.quantity,0 );
         this.quantitySubject.next(quantity);
     }
 
 
     private calcTotal():void{
-        const total = this.products.reduce((acc,prod) => acc += (prod.price * prod.cantidad),0 );
+        const total = this.products.reduce((acc,prod) => acc += (prod.price * prod.quantity),0 );
         this.totalSubject.next(total);
     }
 

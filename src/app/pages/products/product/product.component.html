@@ -9,7 +9,8 @@
     </mat-card-content>
 
     <mat-card-actions>
-       <button mat-flat-button color="primary" (click) = 'onClick()'>
+       <button mat-flat-button color="primary" (click) = 'onClick()' 
+       [disabled]="product.stock === 0">
            <mat-icon class="material-icons">
                shopping_cart
             </mat-icon> Buy {{ product.price | currency }}

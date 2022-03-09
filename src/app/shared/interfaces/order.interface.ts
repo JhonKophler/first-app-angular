@@ -1,15 +1,19 @@
 export interface Details{
-    id: number,
-    orderId: number,
+    productId: number,
     quantity:number,
     productName:string,
 }
 
-export interface Orders{
+export interface Order{
     id:number,
     name: string,
     date: string,
     shippingAddress:string,
     city:string,
-    pickup: boolean,
+    isDelivery: boolean,
+}
+
+export interface DetailsOrders{
+    details: Details[],
+    orderId: number,
 }

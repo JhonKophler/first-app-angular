@@ -12,9 +12,9 @@
         <tbody>
             <tr *ngFor="let item of cart$ | async">
                 <td>{{item.name}}</td>
-                <td middle>{{item.cantidad}}</td>
+                <td middle>{{item.quantity}}</td>
                 <td middle>{{item.price | currency}}</td>
-                <td>{{item.cantidad * item.price | currency}}</td>
+                <td>{{item.quantity * item.price | currency}}</td>
             </tr>
         </tbody>
 

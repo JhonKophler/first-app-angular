@@ -11,10 +11,10 @@
         <mat-radio-group class="form__element">
 
             <p>Escoja una opcion:</p>
-            <mat-radio-button value="pickup" (change)="onPickupOrDelivery(false)" checked>
+            <mat-radio-button value="pickup" (change)="onPickupOrDelivery(false)" >
                 Pickup
             </mat-radio-button>
-            <mat-radio-button value="delivery" (change)="onPickupOrDelivery(true)">
+            <mat-radio-button value="delivery" (change)="onPickupOrDelivery(true)" checked>
                 Delivery
             </mat-radio-button>
 
@@ -73,7 +73,7 @@
     mat-raised-button
     color="primary"
     type="submit"
-    (click)="onSubmit()"
+    (click)="onSubmit(checkoutForm)"
     >
         Checkout!
     </button>
